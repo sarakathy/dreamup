@@ -338,7 +338,7 @@ body {
   </div>
   <div class="intro-body">
     <h2>Imagine What Could Be</h2>
-    <p>Often, the first step to creativity is being able to imagine what <em>could be</em> instead of just what <em>is</em>. Can you see a better future? Can you envision a more just, a more interesting, or a more advanced world? Can you picture small ways your life could be improved?</p>
+    <p>Often, the first step to creativity is being able to imagine what <em>could be</em> instead of just what <em>is</em>. Can you see a better future? Can you envision a more just, a more interesting, or a more advanced world? Can you picture small ways your life or community could be improved?</p>
     <p><strong>Let's practice!</strong></p>
     <button class="btn btn-primary" onclick="goTo('catch')">Let's Dream Up!</button>
   </div>
@@ -358,7 +358,7 @@ body {
     </div>
   </div>
   <div class="instr-card" id="catch-title">
-    <strong>First, catch a cloud and finish the wish.</strong> How many wishes can you make? Go for at least five!
+    <strong>If you had unlimited time, funds, and support, what would you accomplish? Catch a cloud and finish the wish.</strong> How many wishes can you make? Go for at least five!
   </div>
   <div class="wish-counter" aria-live="polite">
     Wishes so far: <span class="count-num" id="wish-count-display">0</span>
@@ -397,7 +397,7 @@ body {
   </div>
   <div class="instr-card" id="motiv-title">
     <strong>Excellent!</strong> Being able to think about what could be better is called <em>problem-finding</em> — an often overlooked but incredibly valuable part of creative thinking.<br><br>
-    Now look at your wishes. <strong>Click the ones that are especially motivating to you.</strong> <span style="color:var(--magenta-dark)">(They will get a magenta glow!)</span>
+    Now look at your wishes. <strong>Click the ones that are especially motivating to you.</strong> 
   </div>
   <div class="wishes-gallery" id="gallery-motivating" role="group" aria-label="Your wishes — click to mark motivating ones"></div>
   <div style="text-align:center;margin-top:14px">
@@ -420,7 +420,7 @@ body {
     </div>
   </div>
   <div class="instr-card blue" id="infl-title">
-    Now look at your wishes and <strong>click the ones where you have some influence</strong> — where you are in a position to do something about it. <span style="color:var(--blue)">(They will get a blue glow — some wishes may glow with two colors!)</span>
+    Now look at your wishes and <strong>click the ones where you have some influence</strong> — where you are in a position to do something about it. 
   </div>
   <div class="legend">
     <div class="legend-item"><div class="legend-dot m"></div> Motivating</div>
@@ -447,7 +447,7 @@ body {
     </div>
   </div>
   <div class="instr-card orange" id="creat-title">
-    Now pick out the wishes that <strong>need creative thinking</strong> — the ones you don't already know exactly how to make happen. <span style="color:#b07000">(They will get an orange glow — some wishes may now glow with all three colors!)</span>
+    Now pick out the wishes that <strong>need creative thinking</strong> — the ones you don't already know exactly how to make happen. 
   </div>
   <div class="legend">
     <div class="legend-item"><div class="legend-dot m"></div> Motivating</div>
@@ -475,7 +475,7 @@ body {
     </div>
   </div>
   <div class="instr-card green" id="choose-title">
-    Do any of your wishes have <strong>all three glows</strong>? Those are perfect for creative problem solving — motivating, within your influence, and needing creative thinking!<br><br>
+    Do any of your wishes have <strong>all three colors</strong>? Those are perfect for creative problem solving — motivating, within your influence, and needing creative thinking!<br><br>
     <strong>Choose one wish to move forward with.</strong>
   </div>
   <div id="trifecta-note" style="display:none" class="instr-card" role="status" aria-live="polite"></div>
@@ -559,7 +559,7 @@ body {
   <div class="celebrate-card">
     <h2 id="celebrate-title">You're a Dreamer!</h2>
     <p>You have imagined in great detail something that <strong>doesn't yet exist</strong>. This is where creativity starts — and you have taken the very first step.</p>
-    <p>Being able to identify a <strong>motivating challenge</strong>, one you have <strong>influence</strong> over, and one that needs <strong>creative thinking</strong> — that's the foundation of real creative problem solving. That's a superpower.</p>
+    <p>Being able to identify a <strong>motivating challenge</strong>, one you have <strong>influence</strong> over, and one that needs <strong>creative thinking</strong>. That's the foundation of real creative problem solving.</p>
     <p><strong>What will you do now? Infinite possibilities await!</strong></p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px">
       <button class="btn btn-primary"   onclick="saveWork()">Save My Work</button>
@@ -578,25 +578,15 @@ const STARTERS = [
   "I wish",
   "I wish",
   "I wish",
-  "I wish",
-  "I wish",
-  "I wish",
   "It would be great if",
   "It would be great if",
   "It would be great if",
-  "It would be great if",
-  "I wish there were",
-  "I wish there were",
+  "I wish my family",
+  "I wish my community",
   "I wish I could",
-  "I wish I could",
-  "I wish we all",
   "I wish everyone",
-  "I wish there were more",
-  "I wish there were fewer",
-  "I wish I was",
   "I wish the world had",
-  "I wish people could",
-  "I wish there was a way to"
+  "I wish there were a way to"
 ];
 
 /* ═══════════════════════════════════════
@@ -673,7 +663,7 @@ function announce(msg) {
 /* ═══════════════════════════════════════
    CLOUD SVG
 ═══════════════════════════════════════ */
-const CW = 200, CH = 88;
+const CW = 280, CH = 120;
 
 function cloudPath(w, h) {
   return `M ${w*.18},${h*.72}
@@ -711,7 +701,7 @@ function gcSVG(w, h) {
 /* ═══════════════════════════════════════
    FLOATING CLOUDS — rAF drift, no overlap
 ═══════════════════════════════════════ */
-const NUM_LANES = 5;   // horizontal lanes to prevent vertical overlap
+const NUM_LANES = 3;   // horizontal lanes to prevent vertical overlap
 
 function buildFloatingClouds() {
   const field = document.getElementById('cloud-field');
@@ -960,7 +950,7 @@ function buildChooseGallery() {
     noteEl.innerHTML = `You have <strong>${trifectas.length}</strong> wish${trifectas.length>1?'es':''} with all three glows — those are pulsing. They are perfect for creative problem solving!`;
   } else {
     noteEl.style.display = 'block';
-    noteEl.innerHTML = 'Even without all three glows, any wish can be your creative challenge. Pick the one that calls to you most!';
+    noteEl.innerHTML = 'If none of your wishes have all three colors, you can make more wishes or pick the one that calls to you most!';
   }
 
   const sorted = [...wishes].sort((a,b) =>
