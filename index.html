@@ -721,7 +721,7 @@ function buildFloatingClouds() {
     const yClamped = Math.max(2, Math.min(fieldH - CH - 2, y));
 
     // Stagger start x so not all at right edge at once
-    const startX = (i / STARTERS.length) * (fieldW - CW);
+   const startX = (i / STARTERS.length) * (fieldW * 2);
     const speed    = 25 + Math.random() * 15;  // px/sec
 
     const bobDur   = 3 + Math.random() * 2.5;
