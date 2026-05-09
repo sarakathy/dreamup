@@ -376,7 +376,7 @@ body {
   </div>
 
   <div id="proceed-area" style="display:none;text-align:center;margin-top:14px">
-    <button class="btn btn-primary" onclick="goTo('motivating')">Review My Wishes</button>
+    <button class="btn btn-primary" onclick="goTo('motivating')">See My Wishes</button>
     <button class="more-wishes-btn" onclick="keepWishing()">+ Make more wishes first</button>
   </div>
 </section>
@@ -946,7 +946,7 @@ function buildChooseGallery() {
   const noteEl = document.getElementById('trifecta-note');
   if (trifectas.length > 0) {
     noteEl.style.display = 'block';
-    noteEl.innerHTML = `You have <strong>${trifectas.length}</strong> wish${trifectas.length>1?'es':''} with all three glows — those are pulsing. They are perfect for creative problem solving!`;
+    noteEl.innerHTML = `You have <strong>${trifectas.length}</strong> wish${trifectas.length>1?'es':''} with all three colors. They are perfect for creative problem solving!`;
   } else {
     noteEl.style.display = 'block';
     noteEl.innerHTML = 'If none of your wishes have all three colors, you can make more wishes or pick the one that calls to you most!';
